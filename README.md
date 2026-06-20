@@ -1,11 +1,19 @@
-# mysite
+# agengit-docs
 
-> An Astro site deployed to Cloudflare Pages.
+Documentation site for **[agengit](https://github.com/matt-riley/agengit)** — the CLI that records AI-agent coding activity so you can inspect what happened between commits.
 
-<!-- Uncomment badges after pushing to GitHub:
-[![CI](https://github.com/YOUR_USERNAME/mysite/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/mysite/actions/workflows/ci.yml)
-[![Deploy](https://github.com/YOUR_USERNAME/mysite/actions/workflows/deploy.yml/badge.svg)](https://github.com/YOUR_USERNAME/mysite/actions/workflows/deploy.yml)
--->
+**Live site:** [https://agengit.mattriley.tools](https://agengit.mattriley.tools)
+
+## What is this?
+
+This Astro site hosts the official documentation for `agit` (agengit). It covers:
+
+- Installation and quick start
+- All CLI commands (setup, inspection, search, analysis, maintenance, remotes, advanced)
+- Architecture and design decisions
+- Data formats
+
+See the [main agengit repository](https://github.com/matt-riley/agengit) for the CLI source, releases, and full feature details.
 
 ## Stack
 
@@ -16,29 +24,11 @@
 - [vitest](https://vitest.dev/) — testing
 - [Cloudflare Pages](https://pages.cloudflare.com/) — hosting
 
-## Getting Started from Template
-
-1. Click "Use this template" on GitHub to create your repo
-2. Clone your new repo
-3. Replace placeholders:
-   ```bash
-   # Update wrangler.toml — change "mysite" to your project name
-   # Update package.json — change "astro-site-template" to your project name
-   # Update README.md — replace YOUR_USERNAME, write your own description
-   ```
-4. Set up Cloudflare Pages secrets in GitHub repo settings:
-   - `CLOUDFLARE_API_TOKEN` — API token with Pages edit permission
-   - `CLOUDFLARE_ACCOUNT_ID` — your Cloudflare account ID
-5. Install dependencies and start developing:
-   ```bash
-   pnpm install
-   pnpm dev
-   ```
-
 ## Development
 
 ```bash
-pnpm dev          # Start dev server
+pnpm install
+pnpm dev          # Start dev server (http://localhost:4321)
 pnpm build        # Build for production
 pnpm preview      # Preview production build locally
 ```
@@ -60,14 +50,16 @@ pnpm format:check # Check formatting (CI uses this)
 
 ## Deployment
 
-Deployment happens automatically on push to `main` via the [Cloudflare Pages deploy workflow](.github/workflows/deploy.yml).
+Deploys automatically on push to `main` via the shared [Cloudflare Pages deploy workflow](.github/workflows/deploy.yml) (see also [CI workflow](.github/workflows/ci.yml)).
 
 To deploy manually:
 
 ```bash
 pnpm build
-pnpm wrangler pages deploy dist --project-name=mysite
+pnpm wrangler pages deploy dist --project-name=agengit-docs
 ```
+
+The production site is served at `https://agengit.mattriley.tools`.
 
 ## License
 
