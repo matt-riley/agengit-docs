@@ -1,0 +1,45 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <div class="flex flex-col md:flex-row flex-1">
+    <aside class="w-full md:w-64 border-b-4 md:border-b-0 md:border-r-4 border-brutal-border bg-brutal-blue p-6 md:shrink-0 h-auto md:h-[calc(100vh-84px)] md:sticky md:top-[84px] overflow-y-auto">
+      <h2 class="text-2xl font-black uppercase mb-6 bg-white border-4 border-brutal-border inline-block px-3 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform -rotate-2">Contents</h2>
+      <ul class="space-y-4 font-bold text-xl">
+        <li>
+          <a href="/docs/getting-started" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">Getting Started</a>
+        </li>
+        <li class="pt-2">
+          <span class="block text-gray-800">Commands</span>
+          <ul class="pl-4 mt-2 space-y-2 text-lg">
+            <li><a href="/docs/commands/setup" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">Setup & Config</a></li>
+            <li><a href="/docs/commands/inspection" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">History Inspection</a></li>
+            <li><a href="/docs/commands/search-and-analysis" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">Search & Analysis</a></li>
+            <li><a href="/docs/commands/remote-and-sharing" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">Remotes & Sharing</a></li>
+            <li><a href="/docs/commands/maintenance-and-health" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">Maintenance</a></li>
+            <li><a href="/docs/commands/advanced" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">Advanced</a></li>
+          </ul>
+        </li>
+        <li class="pt-2">
+          <a href="/docs/architecture" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">Architecture</a>
+        </li>
+        <li>
+          <a href="/docs/format" class="block hover:translate-x-2 transition-transform hover:underline decoration-4 underline-offset-4 decoration-brutal-pink">Format</a>
+        </li>
+      </ul>
+    </aside>
+    <main class="flex-1 p-8 md:p-12 lg:p-16 max-w-4xl w-full">
+      <slot />
+    </main>
+  </div>
+</Layout>

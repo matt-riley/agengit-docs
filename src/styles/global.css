@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --color-brutal-yellow: #fde047;
+  --color-brutal-blue: #93c5fd;
+  --color-brutal-pink: #f9a8d4;
+  --color-brutal-bg: #ffffff;
+  --color-brutal-text: #000000;
+  --color-brutal-border: #000000;
+}
+
+@layer base {
+  body {
+    @apply bg-brutal-bg text-brutal-text font-sans antialiased selection:bg-brutal-pink selection:text-white;
+  }
+  
+  /* Markdown Content Styles */
+  main h1 {
+    @apply text-5xl md:text-6xl font-bold uppercase mb-8 mt-4 tracking-tighter bg-brutal-yellow inline-block px-4 py-2 border-4 border-brutal-border shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+  }
+  main h2 {
+    @apply text-3xl md:text-4xl font-bold uppercase mt-12 mb-6 border-b-4 border-brutal-border pb-2 inline-block;
+  }
+  main h3 {
+    @apply text-2xl font-bold mt-8 mb-4 bg-brutal-pink border-4 border-brutal-border shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] inline-block px-3 py-1;
+  }
+  main p {
+    @apply text-lg md:text-xl mb-6 leading-relaxed font-medium;
+  }
+  main a {
+    @apply font-bold underline decoration-4 underline-offset-4 decoration-brutal-blue hover:bg-brutal-blue hover:text-black transition-colors px-1;
+  }
+  main ul {
+    @apply list-disc list-inside mb-6 text-lg md:text-xl space-y-2 font-medium;
+  }
+  main code {
+    @apply font-mono bg-brutal-yellow text-brutal-text px-2 py-0.5 border-2 border-brutal-border text-sm md:text-base font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)];
+  }
+  main pre {
+    @apply font-mono bg-gray-900 text-white p-4 md:p-6 mb-8 border-4 border-brutal-border overflow-x-auto shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+  }
+  main pre code {
+    @apply bg-transparent text-white border-none p-0 font-normal shadow-none;
+  }
+  main blockquote {
+    @apply border-l-8 border-brutal-blue pl-6 italic my-8 text-xl md:text-2xl font-bold bg-gray-100 py-4 border-y-4 border-r-4 border-y-brutal-border border-r-brutal-border shadow-[6px_6px_0px_0px_rgba(0,0,0,1)];
+  }
+  main table {
+    @apply w-full text-left border-collapse mb-8 border-4 border-brutal-border shadow-[6px_6px_0px_0px_rgba(0,0,0,1)];
+  }
+  main th, main td {
+    @apply border-4 border-brutal-border p-3 text-lg font-medium;
+  }
+  main th {
+    @apply bg-brutal-pink uppercase font-bold text-xl;
+  }
+}

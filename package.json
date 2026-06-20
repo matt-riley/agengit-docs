@@ -1,0 +1,30 @@
+{
+  "name": "agengit-docs",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "oxlint src/",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.1.10",
+    "@astrojs/sitemap": "^3.7.3",
+    "@jdevalk/astro-seo-graph": "^2.0.0",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^6.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.54.0",
+    "oxlint": "^1.0.0",
+    "vitest": "^4.0.0",
+    "wrangler": "^4.0.0"
+  },
+  "packageManager": "pnpm@10.34.3"
+}
