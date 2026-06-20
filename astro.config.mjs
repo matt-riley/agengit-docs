@@ -1,9 +1,9 @@
 // @ts-check
-import { defineConfig } from "astro/config"
-import cloudflare from "@astrojs/cloudflare"
-import tailwindcss from "@tailwindcss/vite"
-import seoGraph from "@jdevalk/astro-seo-graph/integration"
-import sitemap from "@astrojs/sitemap"
+import { defineConfig } from "astro/config";
+import cloudflare from "@astrojs/cloudflare";
+import tailwindcss from "@tailwindcss/vite";
+import seoGraph from "@jdevalk/astro-seo-graph/integration";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,8 +17,8 @@ export default defineConfig({
       validateImageAlt: true,
       validateMetadataLength: true,
       llmsTxt: {
-        title: 'agengit',
-        siteUrl: 'https://agengit.mattriley.tools',
+        title: "agengit",
+        siteUrl: "https://agengit.mattriley.tools",
       },
       markdownAlternate: true,
     }),
@@ -27,4 +27,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-})
+});

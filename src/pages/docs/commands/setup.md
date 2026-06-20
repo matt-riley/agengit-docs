@@ -10,13 +10,15 @@ Welcome to the foundation of your `agit` experience! These commands are all abou
 ## `agit init`
 
 **The 'Why'**
-Before `agit` can track anything, it needs to be hooked up to your AI coding agents. `agit init` does all the heavy lifting for you by scanning your environment, discovering supported agents (like Claude Code, GitHub Copilot CLI, etc.), and installing the necessary hooks or extensions. 
+Before `agit` can track anything, it needs to be hooked up to your AI coding agents. `agit init` does all the heavy lifting for you by scanning your environment, discovering supported agents (like Claude Code, GitHub Copilot CLI, etc.), and installing the necessary hooks or extensions.
 
 **The 'How'**
 Simply run:
+
 ```sh
 agit init
 ```
+
 This is the first command you should run in a repository that you want to observe. It securely backs up your agent configurations (saving them as `*.agit.bak`) before making any changes. If you ever need to forcefully overwrite a malformed configuration file, you can run `agit init --force`.
 
 ## `agit uninstall`
@@ -26,9 +28,11 @@ Sometimes you need to pause recording, or perhaps you're migrating to a differen
 
 **The 'How'**
 When you want to stop `agit` from listening, simply type:
+
 ```sh
 agit uninstall
 ```
+
 It safely unregisters `agit`, leaving your AI agents exactly as they were before `agit init`.
 
 ## `agit version`
@@ -38,9 +42,11 @@ Whenever you're diagnosing an issue, setting up a new machine, or reading the la
 
 **The 'How'**
 Just type:
+
 ```sh
 agit version
 ```
+
 This prints the current version (e.g., `1.22.2`). It's always a good idea to include this output when reporting bugs or asking for help!
 
 ## `agit completion`
@@ -50,6 +56,7 @@ Nobody likes typing out full command names and flags! `agit completion` generate
 
 **The 'How'**
 Depending on your shell, run:
+
 ```sh
 # For bash
 source <(agit completion bash)
@@ -60,4 +67,5 @@ source <(agit completion zsh)
 # For fish
 agit completion fish | source
 ```
+
 Add the corresponding command to your shell's startup script (like `.zshrc` or `.bashrc`) to have autocomplete available every time you open a terminal.

@@ -6,20 +6,20 @@ description: Understanding how AgenGit structures and exports data.
 
 # 📦 Data Formats
 
-Ever wondered what AgenGit's data actually looks like when you peek under the hood or export your sessions? We've designed our data formats to be robust, predictable, and easy to parse. 
+Ever wondered what AgenGit's data actually looks like when you peek under the hood or export your sessions? We've designed our data formats to be robust, predictable, and easy to parse.
 
 Here's a friendly tour of the primary formats you'll encounter when working deeply with AgenGit.
 
 ## 🕵️‍♂️ Blame v1 (`agit blame`)
 
-Just like `git blame` tells you who last modified a line of code, `agit blame` answers: *"Which agent step last changed this line?"*
+Just like `git blame` tells you who last modified a line of code, `agit blame` answers: _"Which agent step last changed this line?"_
 
-**How it works:** 
+**How it works:**
 AgenGit stores a **Blame object** as a JSON file mapping every line of a file to the exact agent step that last changed it. It's stored using a content-addressed BLAKE3 hash.
 
-**The Why:** We calculate this incrementally after a step is committed. By diffing the new content against the previous version, we attribute changed lines to the new step while keeping the old attributions for unchanged lines. Because every session records snapshots of the *same* working tree, you get a beautiful, unified timeline across all your agent sessions!
+**The Why:** We calculate this incrementally after a step is committed. By diffing the new content against the previous version, we attribute changed lines to the new step while keeping the old attributions for unchanged lines. Because every session records snapshots of the _same_ working tree, you get a beautiful, unified timeline across all your agent sessions!
 
-*Note: Renaming files or deleting/recreating them breaks the continuity in v1, but it works flawlessly for standard text file edits!*
+_Note: Renaming files or deleting/recreating them breaks the continuity in v1, but it works flawlessly for standard text file edits!_
 
 ## 🧳 Portable Bundles (`agit export` / `import`)
 
@@ -29,6 +29,7 @@ Need to share a recorded session with a teammate, back it up offline, or migrate
 Running `agit export` creates a clean, portable directory containing only the canonical session references and reachable objects.
 
 A typical bundle looks like this:
+
 ```text
 bundle/
   manifest.json           # The roadmap of your bundle
@@ -60,4 +61,4 @@ Pass the `--json` flag to supported commands, and you'll get a clean, predictabl
 
 ---
 
-*Ready to parse some data? Give `agit log --json` a spin and see the raw power of AgenGit's structured output!*
+_Ready to parse some data? Give `agit log --json` a spin and see the raw power of AgenGit's structured output!_

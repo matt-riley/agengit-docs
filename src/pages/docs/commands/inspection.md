@@ -14,21 +14,25 @@ Just like `git status`, you need a quick overview of what's currently happening 
 
 **The 'How'**
 To get a bird's-eye view, run:
+
 ```sh
 agit status
 ```
+
 Use this when you want to see if `agit` is currently tracking active sessions and get a quick pulse on your repository's state.
 
 ## `agit timeline`
 
 **The 'Why'**
-When an agent completes a complex task, you might want to review its exact chain of thought. `agit timeline` shows you all recently recorded steps across *all* sessions in reverse chronological order. It's the ultimate audit log for your AI's activity.
+When an agent completes a complex task, you might want to review its exact chain of thought. `agit timeline` shows you all recently recorded steps across _all_ sessions in reverse chronological order. It's the ultimate audit log for your AI's activity.
 
 **The 'How'**
 Run:
+
 ```sh
 agit timeline
 ```
+
 This is particularly useful when you return to a project after a coffee break and want to see what your background agent was up to while you were away.
 
 ## `agit sessions`
@@ -38,9 +42,11 @@ Agents perform work in distinct "sessions" (like a conversation thread). Over ti
 
 **The 'How'**
 Run:
+
 ```sh
 agit sessions
 ```
+
 This outputs a clean list of all recorded sessions, allowing you to grab a specific session ID to use with commands like `agit log` or `agit diff`.
 
 ## `agit log`
@@ -50,10 +56,13 @@ If `agit timeline` is a global view, `agit log` is a focused view. It shows you 
 
 **The 'How'**
 To view the most recent session's log:
+
 ```sh
 agit log
 ```
+
 To view a specific session (grab the ID from `agit sessions`):
+
 ```sh
 agit log <SESSION_ID>
 ```
@@ -65,22 +74,27 @@ Every step an agent takes is recorded with a unique BLAKE3 hash. When you need t
 
 **The 'How'**
 Pass the step's hash to see the details:
+
 ```sh
 agit show abc123def
 ```
+
 You can also use flags like `--files` or `--stat` to see a summary of the file changes that happened during this exact step.
 
 ## `agit diff`
 
 **The 'Why'**
-Seeing that a file changed is good, but seeing *how* it changed is better. `agit diff` lets you render a standard diff for a specific step, between two steps, or even across an entire session.
+Seeing that a file changed is good, but seeing _how_ it changed is better. `agit diff` lets you render a standard diff for a specific step, between two steps, or even across an entire session.
 
 **The 'How'**
 To see what changed in a specific step compared to its parent:
+
 ```sh
 agit diff abc123def
 ```
+
 To see what changed across an entire session:
+
 ```sh
 agit diff --session <SESSION_ID>
 ```
@@ -92,6 +106,7 @@ Sometimes you're tracking down a bug, and you know it was introduced between two
 
 **The 'How'**
 Provide the Git commit ranges:
+
 ```sh
 # Show all agent steps after a specific commit
 agit between abc123def
@@ -106,7 +121,9 @@ agit between abc123def fed321cba
 For the true power users! `agit cat` prints the raw, unformatted object content from the `.agit` store based on its BLAKE3 hash. It's an essential tool for debugging the store itself or writing custom scripts that parse raw `agit` data.
 
 **The 'How'**
+
 ```sh
 agit cat abc123def
 ```
+
 Use this when you need to bypass the pretty-printing of `agit show` and get straight to the raw JSON bytes.

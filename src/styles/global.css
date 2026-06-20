@@ -15,7 +15,7 @@
   body {
     @apply bg-brutal-bg text-brutal-text font-sans antialiased selection:bg-brutal-pink selection:text-white;
   }
-  
+
   /* Markdown Content Styles */
   main h1 {
     @apply text-5xl md:text-6xl font-bold uppercase mb-8 mt-4 tracking-tighter bg-brutal-yellow inline-block px-4 py-2 border-4 border-brutal-border shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
@@ -50,7 +50,8 @@
   main table {
     @apply w-full text-left border-collapse mb-8 border-4 border-brutal-border shadow-[6px_6px_0px_0px_rgba(0,0,0,1)];
   }
-  main th, main td {
+  main th,
+  main td {
     @apply border-4 border-brutal-border p-3 text-lg font-medium;
   }
   main th {

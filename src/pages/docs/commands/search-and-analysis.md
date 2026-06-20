@@ -14,6 +14,7 @@ When an agent starts a new task, it needs context. `agit recall` is an agent-ini
 
 **The 'How'**
 You can search by querying terms, filtering by specific file paths, or both:
+
 ```sh
 # Recall recent work related to a specific file
 agit recall --path src/main.zig
@@ -21,33 +22,38 @@ agit recall --path src/main.zig
 # Recall past steps matching a search term
 agit recall "refactoring network requests"
 ```
+
 This is incredibly powerful for keeping agents aligned with previous decisions and architectural patterns.
 
 ## `agit grep`
 
 **The 'Why'**
-Need to find exactly when an agent used a specific API, or search for a specific error message across all past agent sessions? `agit grep` searches through recorded messages and tool activity across *all* sessions in your repository.
+Need to find exactly when an agent used a specific API, or search for a specific error message across all past agent sessions? `agit grep` searches through recorded messages and tool activity across _all_ sessions in your repository.
 
 **The 'How'**
 Simply provide your search query:
+
 ```sh
 # Search all sessions for instances of the word 'factorial'
 agit grep factorial
 ```
+
 It's an indispensable tool for auditing tool usage and finding lost context across multiple days of AI pair programming.
 
 ## `agit blame`
 
 **The 'Why'**
-Just like `git blame` tells you *who* wrote a line of code, `agit blame` tells you *which agent step* resulted in a line of code. It provides per-line step attribution, helping you understand exactly when and why an AI made a specific code change.
+Just like `git blame` tells you _who_ wrote a line of code, `agit blame` tells you _which agent step_ resulted in a line of code. It provides per-line step attribution, helping you understand exactly when and why an AI made a specific code change.
 
 **The 'How'**
 Run it against a specific file:
+
 ```sh
 # Show line-by-line agent blame for a file
 agit blame src/main.zig
 ```
-*Note:* For extremely large files, `agit` caps the read size to keep things fast (using the `AGIT_MAX_FILE_BYTES` limit). You can disable this limit for a single run by passing the `--no-limits` flag.
+
+_Note:_ For extremely large files, `agit` caps the read size to keep things fast (using the `AGIT_MAX_FILE_BYTES` limit). You can disable this limit for a single run by passing the `--no-limits` flag.
 
 ## `agit eval`
 
@@ -56,10 +62,12 @@ How do you know if an agent did a good job? `agit eval` evaluates captured agent
 
 **The 'How'**
 To evaluate the most recently recorded session:
+
 ```sh
 agit eval
 ```
-*Keep in mind:* These classifications are evidence-based signals from captured history. They provide an excellent summary of the session's health, but they are not absolute proof of code correctness or production readiness!
+
+_Keep in mind:_ These classifications are evidence-based signals from captured history. They provide an excellent summary of the session's health, but they are not absolute proof of code correctness or production readiness!
 
 ## `agit stats`
 
@@ -68,7 +76,9 @@ If you want to understand the big picture of how AI is being used in your reposi
 
 **The 'How'**
 Get your repository-wide analytics by running:
+
 ```sh
 agit stats
 ```
+
 This reads directly from your local SQLite index. If the stats look stale or out of sync after a major update, you might need to run `agit reindex` to freshen up the database.

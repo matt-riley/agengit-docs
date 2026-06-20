@@ -14,10 +14,12 @@ These commands are for experimental features, power users, and specific recovery
 
 **The 'How'**
 To process a fixture-backed observer file once:
+
 ```sh
 agit observe --once fixture --input observer.json
 ```
-*Note:* Current experimental sources run a single pass and save watermarks under `.agit/observers/` so that if you rerun the command, it knows to suppress duplicates.
+
+_Note:_ Current experimental sources run a single pass and save watermarks under `.agit/observers/` so that if you rerun the command, it knows to suppress duplicates.
 
 ## `agit watch`
 
@@ -26,9 +28,11 @@ If `agit timeline` is a snapshot of what just happened, `agit watch` is a live-u
 
 **The 'How'**
 Start watching the stream:
+
 ```sh
 agit watch
 ```
+
 Because it polls the database, it's not strictly event-driven. If you're writing a CI script and just need a one-shot output, stick to `agit timeline`. But if you're actively monitoring, `watch` is the way to go.
 
 ## `agit restore`
@@ -38,7 +42,9 @@ Agents make mistakes. Sometimes they delete a file they shouldn't have, or mangl
 
 **The 'How'**
 To restore a specific file from a known step hash (which you can find via `agit timeline` or `agit log`):
+
 ```sh
 agit restore abc123def -- src/main.zig
 ```
-*Safety Guardrails:* By default, `agit` won't blindly overwrite existing files unless you pass the `--force` flag. If you want to restore the entire project tree to that exact step, you must explicitly use the `--all` flag.
+
+_Safety Guardrails:_ By default, `agit` won't blindly overwrite existing files unless you pass the `--force` flag. If you want to restore the entire project tree to that exact step, you must explicitly use the `--all` flag.

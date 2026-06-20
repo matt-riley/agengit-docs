@@ -5,9 +5,9 @@ title: Getting Started
 
 # Getting Started
 
-Welcome to **agengit**! If you're building software with AI agents, you know the feeling: you let the agent loose, it does a bunch of stuff, and then makes a massive Git commit. *What just happened?*
+Welcome to **agengit**! If you're building software with AI agents, you know the feeling: you let the agent loose, it does a bunch of stuff, and then makes a massive Git commit. _What just happened?_
 
-`agit` is a CLI that records AI-agent coding activity into a local `.agit/` store so you can inspect what happened *between* commits.
+`agit` is a CLI that records AI-agent coding activity into a local `.agit/` store so you can inspect what happened _between_ commits.
 
 Let's get it installed and tracking your agents in seconds.
 
@@ -26,11 +26,12 @@ brew install matt-riley/tools/agit
 
 ### Pre-built Binaries
 
-You can also download a pre-built binary for your platform directly from our GitHub releases. 
+You can also download a pre-built binary for your platform directly from our GitHub releases.
 
 #### macOS / Linux
 
 Download the right archive for your architecture:
+
 - `agit-x86_64-linux.tar.gz`
 - `agit-aarch64-linux.tar.gz`
 - `agit-aarch64-macos.tar.gz`
@@ -63,7 +64,7 @@ We designed `agengit` to be insanely easy to set up. Once the CLI is installed, 
 agit init
 ```
 
-That's it! 
+That's it!
 
 `agit init` discovers supported agent CLIs on your `PATH` and installs hook commands into their user config files. It writes generated recorder extensions for agents that expose public hooks. Don't worry, it creates `*.agit.bak` backups of any files it touches before modifying them.
 
@@ -71,17 +72,18 @@ That's it!
 
 Right now, `agengit` seamlessly hooks into these tools:
 
-| Agent | Installed hooks |
-|---|---|
-| **Claude Code** | `UserPromptSubmit`, `PostToolBatch`, `Stop` |
-| **OpenAI Codex CLI** | `UserPromptSubmit`, `PostToolUse`, `Stop` |
-| **Google Gemini CLI** | `AfterTool`, `AfterAgent` |
+| Agent                  | Installed hooks                                   |
+| ---------------------- | ------------------------------------------------- |
+| **Claude Code**        | `UserPromptSubmit`, `PostToolBatch`, `Stop`       |
+| **OpenAI Codex CLI**   | `UserPromptSubmit`, `PostToolUse`, `Stop`         |
+| **Google Gemini CLI**  | `AfterTool`, `AfterAgent`                         |
 | **GitHub Copilot CLI** | Generated extension `agit-recorder/extension.mjs` |
-| **Pi** | Generated extension (auto-discovered) |
+| **Pi**                 | Generated extension (auto-discovered)             |
 
 ## What gets recorded?
 
 Once initialized, the `.agit/` directory will start capturing:
+
 - Agent origins and session identifiers
 - Every message and prompt
 - Tool calls and outputs

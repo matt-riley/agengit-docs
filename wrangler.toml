@@ -1,3 +1,8 @@
 name = "agengit-docs"
 compatibility_date = "2026-02-26"
 compatibility_flags = ["nodejs_compat"]
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+persist = false
