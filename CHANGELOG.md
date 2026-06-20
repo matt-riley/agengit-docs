@@ -12,4 +12,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial Astro site with Tailwind CSS
 - SSR via Cloudflare Workers adapter
 - CI with oxlint, oxfmt, vitest
-- Cloudflare Pages deployment workflow

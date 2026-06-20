@@ -50,9 +50,7 @@ pnpm format:check # Check formatting (CI uses this)
 
 ## Deployment
 
-Deploys automatically on push to `main` via the shared [Cloudflare Pages deploy workflow](.github/workflows/deploy.yml) (see also [CI workflow](.github/workflows/ci.yml)).
-
-To deploy manually:
+CI runs the build for validation (see [.github/workflows/ci.yml](.github/workflows/ci.yml)), but the site is deployed manually.
 
 ```bash
 pnpm build
