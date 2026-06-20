@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.0](https://github.com/matt-riley/agengit-docs/compare/v0.0.1...v0.1.0) (2026-06-20)
+
+
+### Features
+
+* initial commit ([1ac59bc](https://github.com/matt-riley/agengit-docs/commit/1ac59bc80dd54bab2040abc391fcee9f69a654ef))
+
+
+### Bug Fixes
+
+* remove pages_build_output_dir from wrangler.toml to fix deployment ([829400b](https://github.com/matt-riley/agengit-docs/commit/829400bc0a0f6b2a41ddf208c16c5a96701109aa))
+
 ## [Unreleased]
 
 ### Added
