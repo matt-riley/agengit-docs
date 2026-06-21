@@ -19,6 +19,8 @@ AgenGit stores a **Blame object** as a JSON file mapping every line of a file to
 
 **The Why:** We calculate this incrementally after a step is committed. By diffing the new content against the previous version, we attribute changed lines to the new step while keeping the old attributions for unchanged lines. Because every session records snapshots of the _same_ working tree, you get a beautiful, unified timeline across all your agent sessions!
 
+_Note: `agit blame` also supports an optional `model` field. For CLIs that expose it, it can tell you exactly which model (e.g. `claude-sonnet-4-6`) touched a line, not just the CLI origin._
+
 _Note: Renaming files or deleting/recreating them breaks the continuity in v1, but it works flawlessly for standard text file edits!_
 
 ## 🧳 Portable Bundles (`agit export` / `import`)

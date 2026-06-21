@@ -10,7 +10,7 @@ Just like any database or version control system, your `.agit` store needs a lit
 ## `agit doctor`
 
 **The 'Why'**
-If `agit` isn't recording data or something feels broken, `agit doctor` is your first stop. It performs a comprehensive health check on your local store, verifies that your agent hooks are properly installed, and alerts you to any configuration issues.
+If `agit` isn't recording data or something feels broken, `agit doctor` is your first stop. It performs a comprehensive health check on your local store, verifies that your agent hooks are properly installed, and alerts you to any configuration issues. It also reports if binary moves have made your hook paths stale (though package-manager symlinks generally reduce this issue).
 
 **The 'How'**
 To run a full checkup:

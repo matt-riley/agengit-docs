@@ -46,6 +46,12 @@ Under the hood, AgenGit stores your history as immutable, content-addressed obje
 
 **The Why:** We use a local SQLite database (`.agit/index.db`) purely as a **query accelerator**. This means all your timeline views, stats, and search features are lightning-fast. Best of part? If `index.db` ever gets lost or corrupted, it's not a big deal. You can easily rebuild the entire index from the raw objects by running `agit reindex`.
 
+## 🤖 Per-Step Model Attribution
+
+Starting with ADR 042, `agit` doesn't just track *which* agent CLI ran (e.g., Claude Code, Codex, Gemini)—it can record the exact underlying model used for each turn (e.g., `claude-sonnet-4-6`), whenever the hook payload exposes it!
+
+**The Why:** In a fleet where multiple models are used through the same CLI or can be switched mid-session, origin attribution isn't enough. We extract this data gracefully from standard hook payloads (like Codex's extension fields or Claude's `SessionStart` hints) without reverse-engineering opaque APIs. For agents that don't expose model data (like Copilot or Pi), the system degrades elegantly to just reporting the origin CLI.
+
 ---
 
 _Want to dive even deeper? Check out the raw [Architecture Decision Records (ADRs)](https://github.com/matt-riley/agengit/tree/main/docs/adr) in the main AgenGit repository._
