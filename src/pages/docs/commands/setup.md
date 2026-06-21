@@ -47,7 +47,7 @@ Just type:
 agit version
 ```
 
-This prints the current version (e.g., `1.22.2`). It's always a good idea to include this output when reporting bugs or asking for help!
+This prints the current version (e.g., `1.24.0`). It's always a good idea to include this output when reporting bugs or asking for help!
 
 ## `agit completion`
 

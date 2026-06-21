@@ -13,10 +13,10 @@ These commands are for experimental features, power users, and specific recovery
 `agit observe` is an experimental tool used primarily for development and testing. It allows `agit` to ingest events from alternative observer sources (like raw JSON fixtures) rather than listening to live agent hooks. This is perfect for simulating agent activity without actually running an LLM.
 
 **The 'How'**
-To process a fixture-backed observer file once:
+To process a JSONL observer file once:
 
 ```sh
-agit observe --once fixture --input observer.json
+agit observe --once jsonl --input observer.jsonl
 ```
 
 _Note:_ Current experimental sources run a single pass and save watermarks under `.agit/observers/` so that if you rerun the command, it knows to suppress duplicates.

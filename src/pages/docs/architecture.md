@@ -36,7 +36,7 @@ With every agent step, AgenGit takes a snapshot of your workspace so it knows ex
 
 - **Ignored by default:** Common build directories (`node_modules/`, `target/`, `.cache/`), version control (`.git/`, `.agit/`), and generated artifacts.
 - **Secrets protected:** We skip `.env` files, SSH keys, certificates (`*.pem`, `*.p12`), and other common secret-bearing files.
-- **Hard limits:** We automatically skip binary files, symlinks, and any file larger than 10 MiB (configurable via `AGIT_MAX_FILE_BYTES`).
+- **Hard limits:** We automatically skip binary files, symlinks, and any file larger than 16 MiB (configurable via `AGIT_MAX_FILE_BYTES`).
 
 You can always customize this by creating an `.agitignore` file in your repository.
 

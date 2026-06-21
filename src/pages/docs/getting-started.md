@@ -72,13 +72,13 @@ That's it!
 
 Right now, `agengit` seamlessly hooks into these tools:
 
-| Agent                  | Installed hooks                                   |
-| ---------------------- | ------------------------------------------------- |
-| **Claude Code**        | `UserPromptSubmit`, `PostToolBatch`, `Stop`       |
-| **OpenAI Codex CLI**   | `UserPromptSubmit`, `PostToolUse`, `Stop`         |
-| **Google Gemini CLI**  | `AfterTool`, `AfterAgent`                         |
-| **GitHub Copilot CLI** | Generated extension `agit-recorder/extension.mjs` |
-| **Pi**                 | Generated extension (auto-discovered)             |
+| Agent                  | Installed hooks                                             |
+| ---------------------- | ----------------------------------------------------------- |
+| **Claude Code**        | `SessionStart`, `UserPromptSubmit`, `PostToolBatch`, `Stop` |
+| **OpenAI Codex CLI**   | `UserPromptSubmit`, `PostToolUse`, `Stop`                   |
+| **Google Gemini CLI**  | `BeforeModel`, `AfterTool`, `AfterAgent`                    |
+| **GitHub Copilot CLI** | Generated extension `agit-recorder/extension.mjs`           |
+| **Pi**                 | Generated extension (auto-discovered)                       |
 
 ## What gets recorded?
 

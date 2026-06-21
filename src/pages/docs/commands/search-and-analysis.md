@@ -28,7 +28,7 @@ This is incredibly powerful for keeping agents aligned with previous decisions a
 ## `agit grep`
 
 **The 'Why'**
-Need to find exactly when an agent used a specific API, or search for a specific error message across all past agent sessions? `agit grep` searches through recorded messages and tool activity across _all_ sessions in your repository.
+Need to find exactly when an agent used a specific API, or search for a specific error message across all past agent sessions? `agit grep` searches through recorded messages, tool activity, and captured file content across _all_ sessions in your repository.
 
 **The 'How'**
 Simply provide your search query:
