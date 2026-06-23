@@ -48,7 +48,7 @@ Under the hood, AgenGit stores your history as immutable, content-addressed obje
 
 ## 🤖 Per-Step Model Attribution
 
-Starting with ADR 042, `agit` doesn't just track *which* agent CLI ran (e.g., Claude Code, Codex, Gemini)—it can record the exact underlying model used for each turn (e.g., `claude-sonnet-4-6`), whenever the hook payload exposes it!
+Starting with ADR 042, `agit` doesn't just track _which_ agent CLI ran (e.g., Claude Code, Codex, Gemini)—it can record the exact underlying model used for each turn (e.g., `claude-sonnet-4-6`), whenever the hook payload exposes it!
 
 **The Why:** In a fleet where multiple models are used through the same CLI or can be switched mid-session, origin attribution isn't enough. We extract this data gracefully from standard hook payloads (like Codex's extension fields or Claude's `SessionStart` hints) without reverse-engineering opaque APIs. For agents that don't expose model data (like Copilot or Pi), the system degrades elegantly to just reporting the origin CLI.
 

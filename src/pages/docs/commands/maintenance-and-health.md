@@ -9,6 +9,8 @@ Just like any database or version control system, your `.agit` store needs a lit
 
 ## `agit doctor`
 
+![VHS demo: agit doctor](/vhs/doctor.gif)
+
 **The 'Why'**
 If `agit` isn't recording data or something feels broken, `agit doctor` is your first stop. It performs a comprehensive health check on your local store, verifies that your agent hooks are properly installed, and alerts you to any configuration issues. It also reports if binary moves have made your hook paths stale (though package-manager symlinks generally reduce this issue).
 
@@ -29,6 +31,8 @@ This will print out exactly why the agent integration failed without breaking yo
 
 ## `agit fsck`
 
+![VHS demo: agit fsck](/vhs/fsck.gif)
+
 **The 'Why'**
 Corrupt data is a nightmare. `agit fsck` (File System Consistency Check) verifies the integrity of all your BLAKE3-hashed objects, references, the SQLite index, and the `.agit/tmp` staging area. It ensures that the cryptographic hashes actually match the data on disk.
 
@@ -43,6 +47,8 @@ It's a good habit to run this occasionally, especially before pushing data to a 
 
 ## `agit gc`
 
+![VHS demo: agit gc](/vhs/gc.gif)
+
 **The 'Why'**
 Over time, as agents rewrite files and discard old paths, your `.agit` store might accumulate unreachable "loose" objects and stale temporary files. `agit gc` (Garbage Collection) prunes this dead weight, potentially repacking reachable data to save disk space.
 
@@ -55,6 +61,8 @@ agit gc
 This command safely cleans up old data while respecting a default grace period, so it won't delete data from active, ongoing sessions.
 
 ## `agit privacy scan`
+
+![VHS demo: agit privacy scan](/vhs/privacy.gif)
 
 **The 'Why'**
 AI agents sometimes handle API keys or sensitive data. While `agit` tries to automatically redact secrets based on its `.agit/config.json` policy, it's always best to verify. `agit privacy scan` scours your captured content for sensitive data—and it does so without ever printing the secret values to the terminal.
@@ -69,6 +77,8 @@ agit privacy scan
 If it finds anything sensitive, it will exit with a non-zero status code, giving you a chance to review the data before it leaves your machine.
 
 ## `agit reindex`
+
+![VHS demo: agit reindex](/vhs/reindex.gif)
 
 **The 'Why'**
 `agit` relies on a fast SQLite index (`.agit/index.db`) to power commands like `timeline` and `stats`. If you've just upgraded `agit`, or if `agit doctor` reports that the index is out of sync with the raw objects, you need to rebuild it from the ground up.

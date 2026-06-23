@@ -9,6 +9,8 @@ One of `agit`'s superpowers is acting as a time machine for your AI agent's acti
 
 ## `agit status`
 
+![VHS demo: agit status](/vhs/status.gif)
+
 **The 'Why'**
 Just like `git status`, you need a quick overview of what's currently happening in your repository. `agit status` acts as your investigation dashboard, giving you a top-level summary of your recorded agent history.
 
@@ -22,6 +24,8 @@ agit status
 Use this when you want to see if `agit` is currently tracking active sessions and get a quick pulse on your repository's state.
 
 ## `agit timeline`
+
+![VHS demo: agit timeline](/vhs/timeline.gif)
 
 **The 'Why'**
 When an agent completes a complex task, you might want to review its exact chain of thought. `agit timeline` shows you all recently recorded steps across _all_ sessions in reverse chronological order. It's the ultimate audit log for your AI's activity.
@@ -37,6 +41,8 @@ This is particularly useful when you return to a project after a coffee break an
 
 ## `agit sessions`
 
+![VHS demo: agit sessions](/vhs/sessions.gif)
+
 **The 'Why'**
 Agents perform work in distinct "sessions" (like a conversation thread). Over time, your `.agit` store will accumulate many sessions. This command lists them all, helping you identify specific tasks or conversations.
 
@@ -50,6 +56,8 @@ agit sessions
 This outputs a clean list of all recorded sessions, allowing you to grab a specific session ID to use with commands like `agit log` or `agit diff`.
 
 ## `agit log`
+
+![VHS demo: agit log](/vhs/log.gif)
 
 **The 'Why'**
 If `agit timeline` is a global view, `agit log` is a focused view. It shows you the specific step history for a single session, making it easy to follow the narrative of one specific task from start to finish.
@@ -69,6 +77,8 @@ agit log <SESSION_ID>
 
 ## `agit show`
 
+![VHS demo: agit show](/vhs/show.gif)
+
 **The 'Why'**
 Every step an agent takes is recorded with a unique BLAKE3 hash. When you need to drill down into the absolute minutiae of a single step—what tools were used, what files were changed, what the exact prompt was—`agit show` is your magnifying glass.
 
@@ -82,6 +92,8 @@ agit show abc123def
 You can also use flags like `--files` or `--stat` to see a summary of the file changes that happened during this exact step.
 
 ## `agit diff`
+
+![VHS demo: agit diff](/vhs/diff.gif)
 
 **The 'Why'**
 Seeing that a file changed is good, but seeing _how_ it changed is better. `agit diff` lets you render a standard diff for a specific step, between two steps, or even across an entire session.
@@ -101,6 +113,8 @@ agit diff --session <SESSION_ID>
 
 ## `agit between`
 
+![VHS demo: agit between](/vhs/between.gif)
+
 **The 'Why'**
 Sometimes you're tracking down a bug, and you know it was introduced between two specific Git commits. `agit between` correlates Git history with `agit` history, showing you all the agent steps that occurred between two Git revisions.
 
@@ -116,6 +130,8 @@ agit between abc123def fed321cba
 ```
 
 ## `agit cat`
+
+![VHS demo: agit cat](/vhs/cat.gif)
 
 **The 'Why'**
 For the true power users! `agit cat` prints the raw, unformatted object content from the `.agit` store based on its BLAKE3 hash. It's an essential tool for debugging the store itself or writing custom scripts that parse raw `agit` data.
