@@ -9,7 +9,7 @@ By default, all `agit` data is stored locally on your machine in the `.agit/` di
 
 ## `agit push`
 
-![VHS demo: agit push](/vhs/push.gif)
+<video src="/vhs/push.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 You wouldn't leave your Git commits unpushed, and you shouldn't leave your `agit` history stranded on your local machine either. `agit push` uploads all reachable objects and session references to an S3-compatible remote configured in your `.agit/config.json`.
@@ -25,7 +25,7 @@ _Security Note:_ `agit push` automatically runs a local privacy scan (like `agit
 
 ## `agit pull`
 
-![VHS demo: agit pull](/vhs/pull.gif)
+<video src="/vhs/pull.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 When a teammate has pushed agent history to your shared remote, or you're pulling down your own backups on a new machine, you need `agit pull`. It securely downloads missing objects and session references from your configured remote.
@@ -40,7 +40,7 @@ If your remote data was encrypted during the push, `agit pull` will decrypt it l
 
 ## `agit export`
 
-![VHS demo: agit export](/vhs/export.gif)
+<video src="/vhs/export.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 Sometimes you don't have an S3 remote configured, or you want to share a specific debugging session with a colleague via a zip file. `agit export` allows you to write a highly portable bundle containing selected session references and all their reachable objects directly to a folder on your disk.
@@ -57,7 +57,7 @@ You can then zip up the `dist/bundle` directory and share it with anyone!
 
 ## `agit import`
 
-![VHS demo: agit import](/vhs/import.gif)
+<video src="/vhs/import.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 If someone hands you a bundled export directory, you need a safe way to ingest it into your own local store. `agit import` brings a portable bundle into your `.agit` directory, while validating hashes and cleanly handling any reference conflicts along the way.

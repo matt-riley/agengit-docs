@@ -9,7 +9,7 @@ As your repository grows, finding specific agent actions becomes crucial. These 
 
 ## `agit recall`
 
-![VHS demo: agit recall](/vhs/recall.gif)
+<video src="/vhs/recall.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 When an agent starts a new task, it needs context. `agit recall` is an agent-initiated "pull memory" mechanism that allows an agent (or you!) to retrieve prior recorded steps to inform the current task. Think of it as a contextual search engine for your project's agent history.
@@ -29,7 +29,7 @@ This is incredibly powerful for keeping agents aligned with previous decisions a
 
 ## `agit grep`
 
-![VHS demo: agit grep](/vhs/grep.gif)
+<video src="/vhs/grep.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 Need to find exactly when an agent used a specific API, or search for a specific error message across all past agent sessions? `agit grep` searches through recorded messages, tool activity, and captured file content across _all_ sessions in your repository.
@@ -46,7 +46,7 @@ It's an indispensable tool for auditing tool usage and finding lost context acro
 
 ## `agit blame`
 
-![VHS demo: agit blame](/vhs/blame.gif)
+<video src="/vhs/blame.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 Just like `git blame` tells you _who_ wrote a line of code, `agit blame` tells you _which agent step_ resulted in a line of code. It provides per-line step attribution, helping you understand exactly when and why an AI made a specific code change.
@@ -63,7 +63,7 @@ _Note:_ For extremely large files, `agit` caps the read size to keep things fast
 
 ## `agit eval`
 
-![VHS demo: agit eval](/vhs/eval.gif)
+<video src="/vhs/eval.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 How do you know if an agent did a good job? `agit eval` evaluates captured agent sessions using evidence-based quality signals (like whether the code compiled, if tests passed, or if the agent struggled with errors). It's an automated quality check on your agent's performance.
@@ -79,7 +79,7 @@ _Keep in mind:_ These classifications are evidence-based signals from captured h
 
 ## `agit stats`
 
-![VHS demo: agit stats](/vhs/stats.gif)
+<video src="/vhs/stats.mp4" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 If you want to understand the big picture of how AI is being used in your repository, `agit stats` provides the analytics. It summarizes recorded sessions, steps, tool usage frequencies, and file-change activity across your entire store.
