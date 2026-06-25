@@ -9,7 +9,7 @@ These commands are for experimental features, power users, and specific recovery
 
 ## `agit observe`
 
-<video src="/vhs/observe.mp4?v2" autoplay loop muted playsinline></video>
+<video src="/vhs/observe.mp4?v3" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 `agit observe` is an experimental tool used primarily for development and testing. It allows `agit` to ingest events from alternative observer sources (like raw JSON fixtures) rather than listening to live agent hooks. This is perfect for simulating agent activity without actually running an LLM.
@@ -25,7 +25,7 @@ _Note:_ Current experimental sources run a single pass and save watermarks under
 
 ## `agit watch`
 
-<video src="/vhs/watch.mp4?v2" autoplay loop muted playsinline></video>
+<video src="/vhs/watch.mp4?v3" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 If `agit timeline` is a snapshot of what just happened, `agit watch` is a live-updating stream. It polls the local SQLite index for newly finalized agent steps and prints them to the terminal in near-real-time. It's fantastic for monitoring a background agent's progress without constantly spamming `agit status`.
@@ -41,7 +41,7 @@ Because it polls the database, it's not strictly event-driven. If you're writing
 
 ## `agit restore`
 
-<video src="/vhs/restore.mp4?v2" autoplay loop muted playsinline></video>
+<video src="/vhs/restore.mp4?v3" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 Agents make mistakes. Sometimes they delete a file they shouldn't have, or mangle a function beyond recognition. Because `agit` takes snapshots of the workspace at every step, `agit restore` lets you reach back into a captured step and copy those files directly back into your current working tree. It's your ultimate "undo" button for AI coding.

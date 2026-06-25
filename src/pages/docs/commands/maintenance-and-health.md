@@ -9,7 +9,7 @@ Just like any database or version control system, your `.agit` store needs a lit
 
 ## `agit doctor`
 
-<video src="/vhs/doctor.mp4?v2" autoplay loop muted playsinline></video>
+<video src="/vhs/doctor.mp4?v3" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 If `agit` isn't recording data or something feels broken, `agit doctor` is your first stop. It performs a comprehensive health check on your local store, verifies that your agent hooks are properly installed, and alerts you to any configuration issues. It also reports if binary moves have made your hook paths stale (though package-manager symlinks generally reduce this issue).
@@ -31,7 +31,7 @@ This will print out exactly why the agent integration failed without breaking yo
 
 ## `agit fsck`
 
-<video src="/vhs/fsck.mp4?v2" autoplay loop muted playsinline></video>
+<video src="/vhs/fsck.mp4?v3" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 Corrupt data is a nightmare. `agit fsck` (File System Consistency Check) verifies the integrity of all your BLAKE3-hashed objects, references, the SQLite index, and the `.agit/tmp` staging area. It ensures that the cryptographic hashes actually match the data on disk.
@@ -47,7 +47,7 @@ It's a good habit to run this occasionally, especially before pushing data to a 
 
 ## `agit gc`
 
-<video src="/vhs/gc.mp4?v2" autoplay loop muted playsinline></video>
+<video src="/vhs/gc.mp4?v3" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 Over time, as agents rewrite files and discard old paths, your `.agit` store might accumulate unreachable "loose" objects and stale temporary files. `agit gc` (Garbage Collection) prunes this dead weight, potentially repacking reachable data to save disk space.
@@ -62,7 +62,7 @@ This command safely cleans up old data while respecting a default grace period, 
 
 ## `agit privacy scan`
 
-<video src="/vhs/privacy.mp4?v2" autoplay loop muted playsinline></video>
+<video src="/vhs/privacy.mp4?v3" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 AI agents sometimes handle API keys or sensitive data. While `agit` tries to automatically redact secrets based on its `.agit/config.json` policy, it's always best to verify. `agit privacy scan` scours your captured content for sensitive data—and it does so without ever printing the secret values to the terminal.
@@ -78,7 +78,7 @@ If it finds anything sensitive, it will exit with a non-zero status code, giving
 
 ## `agit reindex`
 
-<video src="/vhs/reindex.mp4?v2" autoplay loop muted playsinline></video>
+<video src="/vhs/reindex.mp4?v3" autoplay loop muted playsinline></video>
 
 **The 'Why'**
 `agit` relies on a fast SQLite index (`.agit/index.db`) to power commands like `timeline` and `stats`. If you've just upgraded `agit`, or if `agit doctor` reports that the index is out of sync with the raw objects, you need to rebuild it from the ground up.
