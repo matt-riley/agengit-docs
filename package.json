@@ -21,7 +21,7 @@
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
-    "oxfmt": "^0.58.0",
+    "oxfmt": "^0.59.0",
     "oxlint": "^1.0.0",
     "vitest": "^4.0.0",
     "wrangler": "^4.104.0"
