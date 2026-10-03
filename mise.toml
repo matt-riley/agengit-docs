@@ -7,17 +7,21 @@ description = "Install dependencies"
 run = "pnpm install --frozen-lockfile"
 
 [tasks.build]
+depends = ["install"]
 description = "Build the app"
 run = "pnpm run build"
 
 [tasks.test]
+depends = ["install"]
 description = "Run tests"
 run = "pnpm run test"
 
 [tasks.lint]
+depends = ["install"]
 description = "Run linter"
 run = "pnpm run lint"
 
 [tasks.fmt]
+depends = ["install"]
 description = "Check formatting"
 run = "pnpm run format:check"
